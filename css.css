@@ -1,0 +1,8 @@
+div#color{
+    width: 20px;
+    height: 20px;
+}
+
+#desc{
+    display: flex;
+}

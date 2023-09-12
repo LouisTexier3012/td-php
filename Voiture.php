@@ -34,15 +34,16 @@ class Voiture {
 
     // Pour pouvoir convertir un objet en chaîne de caractères
     public function __toString() {
-        $voiture = "voiture d'immatriculation ".$this->immatriculation." es une ".$this->marque;
+        $voiture = '<div id="desc" style="display: flex;">voiture d\'immatriculation '.$this->immatriculation." est une ".$this->marque;
         if ($this->model!=null){
             $voiture.= " ".$this->model;
         }
         if ($this->couleur!=null){
-            $voiture .= " de couleur ".$this->couleur;
+            $voiture .= ' de couleur <div id="color" style="margin-left: 3px;width: 20px; height: 20px;background-color:'.$this->couleur.';"></div>';
         }if ($this->nbSieges != 0 && $this->nbSieges != null){
             $voiture .= ", elle a ".$this->nbSieges." sieges.";
         }
+        $voiture .= "</div>";
         return $voiture;
     }
 
