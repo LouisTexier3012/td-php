@@ -1,6 +1,6 @@
 <?php
 require_once "Voiture.php";
-$voiture1 = new Voiture("AB123CD","Tesla","model S", "rouge",5);
+$voiture1 = new ModeleVoiture("AB123CD","Tesla","model S", "rouge",5);
 ?>
 <html>
 <head>

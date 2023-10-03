@@ -47,6 +47,43 @@ class Voiture {
         return $voiture;
     }
 
+    public static function construireDepuisTableau(array $voitureFormatTableau): ModeleVoiture {
+        // Créez une instance de ModeleVoiture à partir du tableau
+        return new ModeleVoiture($voitureFormatTableau['marque'], $voitureFormatTableau['model'], $voitureFormatTableau['couleur'], $voitureFormatTableau['immatriculation'], $voitureFormatTableau['nbSieges']);
+    }
+
+    public static function getVoitures(): array {
+        // Incluez le fichier contenant la classe ConnexionBaseDeDonnee pour se connecter à la BDD
+        require_once 'Model.php';
+
+        // Obtenez une instance PDO à partir de la classe ConnexionBaseDeDonnee
+        $pdo = ConnexionBaseDeDonnee::getPdo();
+
+        // Requête SQL pour récupérer toutes les voitures de la base de données
+        $sql = "SELECT * FROM voitures";
+
+        // Exécutez la requête SQL
+        $pdoStatement = $pdo->query($sql);
+
+        $voitures = array();
+
+        // Vérifiez si la requête a réussi
+        if ($pdoStatement) {
+            // Utilisez une boucle foreach pour parcourir toutes les voitures
+            foreach ($pdoStatement as $voitureFormatTableau) {
+                // Utilisez la méthode construireDepuisTableau pour créer l'objet ModeleVoiture
+                $voiture = self::construireDepuisTableau($voitureFormatTableau);
+
+                // Ajoutez la voiture au tableau des voitures
+                $voitures[] = $voiture;
+            }
+        } else {
+            echo "Erreur lors de l'exécution de la requête SQL.";
+        }
+
+        return $voitures;
+    }
+
     /**
      * @return mixed
      */

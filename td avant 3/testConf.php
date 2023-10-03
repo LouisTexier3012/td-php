@@ -6,4 +6,4 @@
 // SQLSTATE[HY000] [1045] Access denied for user ... (mauvais mot de passe)
 // ou
 // SQLSTATE[HY000] [2002] php_network_getaddresses: getaddrinfo failed (mauvais hostname)
-echo Model::getPdo()->getAttribute(PDO::ATTR_CONNECTION_STATUS);
+echo ConnexionBaseDeDonnee::getPdo()->getAttribute(PDO::ATTR_CONNECTION_STATUS);
