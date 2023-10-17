@@ -1,5 +1,8 @@
 <?php
-    require_once 'conf/Configuration.php';
+
+use Configuration\ConnexionBaseDeDonnee;
+
+require_once 'conf/Configuration.php';
 
 class Model {
     private static ?ConnexionBaseDeDonnee $instance = null;

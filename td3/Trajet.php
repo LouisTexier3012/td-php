@@ -1,5 +1,7 @@
 <?php
 
+use Configuration\ConnexionBaseDeDonnee;
+
 require_once 'ConnexionBaseDeDonnee.php';
 
 class Trajet {

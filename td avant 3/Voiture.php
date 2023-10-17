@@ -1,4 +1,8 @@
 <?php
+
+use App\Covoiturage\Modele\ModeleVoiture;
+use App\Covoiturage\Configuration\ConnexionBaseDeDonnee;
+
 class Voiture {
 
     private string $immatriculation;
@@ -34,14 +38,14 @@ class Voiture {
 
     // Pour pouvoir convertir un objet en chaîne de caractères
     public function __toString() {
-        $voiture = '<div id="desc" style="display: flex;">voiture d\'immatriculation '.$this->immatriculation." est une ".$this->marque;
+        $voiture = '<div id="desc" style="display: flex;">voiture d\'immatriculation '.htmlspecialchars($this->immatriculation)." est une ".htmlspecialchars($this->marque);
         if ($this->model!=null){
-            $voiture.= " ".$this->model;
+            $voiture.= " ".htmlspecialchars($this->model);
         }
         if ($this->couleur!=null){
-            $voiture .= ' de couleur <div id="color" style="margin-left: 3px;width: 20px; height: 20px;background-color:'.$this->couleur.';"></div>';
+            $voiture .= ' de couleur <div id="color" style="margin-left: 3px;width: 20px; height: 20px;background-color:'.htmlspecialchars($this->couleur).';"></div>';
         }if ($this->nbSieges != 0 && $this->nbSieges != null){
-            $voiture .= ", elle a ".$this->nbSieges." sieges.";
+            $voiture .= ", elle a ".htmlspecialchars($this->nbSieges)." sieges.";
         }
         $voiture .= "</div>";
         return $voiture;

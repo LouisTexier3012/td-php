@@ -1,4 +1,7 @@
 <?php
+
+use Modele\ModeleVoiture;
+
 require_once 'ModeleVoiture.php'; // Inclure la classe ModeleVoiture
 require_once 'ConnexionBaseDeDonnee.php'; // Inclure le fichier contenant la classe ConnexionBaseDeDonnee pour la connexion à la BDD
 

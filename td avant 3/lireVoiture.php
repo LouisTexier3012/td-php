@@ -1,5 +1,7 @@
 <?php
 // Incluez le fichier contenant la classe ModeleVoiture
+use Modele\ModeleVoiture;
+
 require_once 'Voiture.php';
 
 // Récupérez toutes les voitures depuis la base de données

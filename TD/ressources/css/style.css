@@ -1,0 +1,44 @@
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style du corps de la page */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Style de l'en-tête */
+header {
+    background-color: #333; /* Couleur de fond */
+    padding: 10px 0; /* Espacement interne haut/bas */
+    margin-bottom: 20px ;
+}
+
+/* Style du menu de navigation */
+nav ul {
+    list-style-type: none;
+    text-align: center; /* Centrer horizontalement */
+}
+
+nav ul li {
+    display: inline; /* Afficher les éléments en ligne */
+    margin: 0 10px; /* Espacement des éléments */
+}
+
+/* Style des liens de navigation */
+nav ul li a {
+    text-decoration: none;
+    padding: 5px 15px; /* Espacement interne gauche/droite */
+    background-color: #FF5733; /* Couleur de fond rouge */
+    color: white; /* Couleur du texte */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s ease; /* Animation de transition */
+}
+
+/* Animation au survol */
+nav ul li a:hover {
+    background-color: #FF2200; /* Nouvelle couleur de fond au survol */
+}

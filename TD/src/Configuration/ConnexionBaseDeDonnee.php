@@ -1,16 +1,21 @@
 <?php
-    require_once '../../conf/Configuration.php';
 
-class ConnexionBaseDeDonnee {
+namespace App\Covoiturage\Configuration;
+use PDO;
+
+class ConnexionBaseDeDonnee
+{
     private static ?ConnexionBaseDeDonnee $instance = null;
 
-    private PDO $pdo;
+    private     PDO $pdo;
 
-    public static function getPdo(): PDO {
+    public static function getPdo(): PDO
+    {
         return ConnexionBaseDeDonnee::getInstance()->pdo;
     }
 
-    private function __construct () {
+    private function __construct()
+    {
         // Connexion à la base de données
         // Le dernier argument sert à ce que toutes les chaines de caractères
         // en entrée et sortie de MySql soit dans le codage UTF-8
@@ -29,7 +34,8 @@ class ConnexionBaseDeDonnee {
     // getInstance s'assure que le constructeur ne sera
     // appelé qu'une seule fois.
     // L'unique instance crée est stockée dans l'attribut $instance
-    private static function getInstance() : ConnexionBaseDeDonnee {
+    private static function getInstance(): ConnexionBaseDeDonnee
+    {
         // L'attribut statique $pdo s'obtient avec la syntaxe ConnexionBaseDeDonnee::$pdo
         // au lieu de $this->pdo pour un attribut non statique
         if (is_null(ConnexionBaseDeDonnee::$instance))

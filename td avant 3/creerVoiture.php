@@ -1,4 +1,7 @@
 <?php
+
+use Modele\ModeleVoiture;
+
 require_once "Voiture.php";
 $imat = $_POST["immatriculation"];
 $marque = $_POST["marque"];
